@@ -2,20 +2,20 @@
   "name": "goit-js-hw-08",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/AgaP151/goit-js-hw-08.git",
+  "homepage": "https://agap151.github.io/goit-js-hw-08/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AgaP151/goit-js-hw-08.git"
+    "url": "https://agap151.github.io/goit-js-hw-08/"
   },
   "keywords": [],
   "author": "Agnieszka Piotrowska <piotrowska.agnieszka1987@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AgaP151/goit-js-hw-08.git"
+    "url": "https://agap151.github.io/goit-js-hw-08/"
   },
   "dependencies": {
     "@vimeo/player": "^2.20.1",
