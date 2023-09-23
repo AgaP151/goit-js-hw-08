@@ -10,10 +10,10 @@ let formData = {
     message: ""
 }
 
-updateForm();
+updateForm();        
 
 inputEL.addEventListener('input', throttle(() => {
-    formData.email = inputEl.value;
+    formData.email = inputEL.value;
     localStorage.setItem(FORM_STATE, JSON.stringify(formData))
 }, 500));
 
@@ -29,8 +29,6 @@ function updateForm() {
         formData.message = JSON.parse(localStorage.getItem(FORM_STATE)).message;
         inputEL.value = formData.email;
         messageEl.value = formData.message;
-    } else {
-        return;
     }
 }
 function handleSubmit(event) {
