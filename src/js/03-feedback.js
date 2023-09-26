@@ -34,7 +34,7 @@ function updateForm() {
 function handleSubmit(event) {
     event.preventDefault();
 
-    if (inputEl.value && messageEl.value) {
+    if (inputEL.value && messageEl.value) {
     console.log(formData);
     localStorage.clear();
     event.currentTarget.reset();
