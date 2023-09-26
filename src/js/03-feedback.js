@@ -5,22 +5,22 @@ const messageEl = document.querySelector('textarea');
 const form = document.querySelector('.feedback-form');
 const FORM_STATE = "feedback-form-state";
 
-let formData = {
-    email: "",
-    message: ""
+form.addEventListener('input', throttle(onInputData, 500));
+form.addEventListener('submit', onFormSubmit);
+
+let formData = JSON.parse(localStorage.getItem(FORM_STATE)) || {};
+const { email, message } = form.elements;
+
+
+function onInputData(e) {
+  FormData = { email: email.value, message: message.value };
+  localStorage.setItem(FORM_STATE   , JSON.stringify(FormData));
 }
 
-updateForm();        
-
-inputEL.addEventListener('input', throttle(() => {
-    formData.email = inputEL.value;
-    localStorage.setItem(FORM_STATE, JSON.stringify(formData))
-}, 500));
-
-messageEl.addEventListener('input', throttle(() => {
-    formData.message = messageEl.value;
-localStorage.setItem(FORM_STATE, JSON.stringify(formData))
-}, 500));
+function onFormSubmit(e) {
+    e.preventDefault();
+    
+}
 
 form.addEventListener("submit", handleSubmit);
 function updateForm() {
@@ -35,7 +35,7 @@ function handleSubmit(event) {
     event.preventDefault();
 
     if (inputEL.value && messageEl.value) {
-    console.log(formData);
+    console.log(FormData);
     localStorage.clear();
     event.currentTarget.reset();
     formData = {
