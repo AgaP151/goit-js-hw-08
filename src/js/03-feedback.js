@@ -5,12 +5,14 @@ const messageEl = document.querySelector('textarea');
 const form = document.querySelector('.feedback-form');
 const FORM_STATE = "feedback-form-state";
 
+
 form.addEventListener('input', throttle(onInputData, 500));
 form.addEventListener('submit', onFormSubmit);
 
 let formData = JSON.parse(localStorage.getItem(FORM_STATE)) || {};
 const { email, message } = form.elements;
 
+updateForm();
 
 function onInputData(e) {
   FormData = { email: email.value, message: message.value };
